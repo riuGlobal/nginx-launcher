@@ -1,6 +1,0 @@
-services:
-  reverse:
-    networks:
-      - default
-
-#  networks:

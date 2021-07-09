@@ -1,3 +1,13 @@
 services: 
   reverse:
     restart: unless-stopped
+
+  home-page:
+    restart: unless-stopped
+  
+  strapi-blog:
+    restart: unless-stopped
+
+  strapi-blog-web:
+    restart: unless-stopped
+

@@ -2,7 +2,25 @@ version: '3.8'
 
 services: 
   reverse:
-    container_name: ${NGINX_CONTAINER_NAME:-nginx}
     image: nginx:1.21.0-alpine
     volumes:
       - ${PWD}/config:/etc/nginx
+
+  home-page:
+    image: nginx:1.21.0-alpine
+    volumes: 
+      - ${PWD}/html:/usr/share/nginx/html
+
+  strapi-blog:
+    build: https://github.com/riuGlobal/strapi-blog.git
+    volumes:
+      - ${PWD}/strapi-data:/strapi-data
+
+  strapi-blog-web:
+    depends_on:
+      - strapi-blog
+    build: https://github.com/riuGlobal/strapi-blog-web.git
+    environment:
+      - NEXT_PUBLIC_STRAPI_API_URL
+
+
