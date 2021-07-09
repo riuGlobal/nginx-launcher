@@ -1,0 +1,8 @@
+version: '3.8'
+
+services: 
+  reverse:
+    container_name: ${NGINX_CONTAINER_NAME:-nginx}
+    image: nginx:1.21.0-alpine
+    volumes:
+      - ${PWD}/config:/etc/nginx

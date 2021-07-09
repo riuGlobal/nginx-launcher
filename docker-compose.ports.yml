@@ -1,0 +1,4 @@
+services: 
+  reverse:
+    ports:
+      - 80:80

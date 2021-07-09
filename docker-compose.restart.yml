@@ -1,0 +1,3 @@
+services: 
+  reverse:
+    restart: unless-stopped
