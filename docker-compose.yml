@@ -22,5 +22,19 @@ services:
     build: https://github.com/riuGlobal/strapi-blog-web.git
     environment:
       - NEXT_PUBLIC_STRAPI_API_URL
+  
+  bank: 
+    build: https://github.com/riuGlobal/bank-server.git#${BANK_VERSION:-master}
+    env_file: 
+      - .env
+
+  bank-web:
+    depends_on:
+      - bank
+    build: https://github.com/riuGlobal/bank-client.git#${BANK_WEB_VERSION:-master}
+    volumes:
+      - ${PWD}/.env:/bank-web/.env
+
+    
 
 
