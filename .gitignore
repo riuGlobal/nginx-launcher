@@ -2,3 +2,4 @@
 config
 strapi-data
 html
+pg-data
