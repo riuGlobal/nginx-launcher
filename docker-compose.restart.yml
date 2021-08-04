@@ -22,3 +22,6 @@ services:
 
   bank-web:
     restart: unless-stopped
+
+  training:
+    restart: unless-stopped
