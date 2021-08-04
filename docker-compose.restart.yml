@@ -1,13 +1,24 @@
 services: 
+
+  # reverse proxy
   reverse:
     restart: unless-stopped
 
+  # home page
   home-page:
     restart: unless-stopped
   
+
+  # strapi-blog
   strapi-blog:
     restart: unless-stopped
 
   strapi-blog-web:
     restart: unless-stopped
 
+  # bank
+  bank: 
+    restart: unless-stopped
+
+  bank-web:
+    restart: unless-stopped
