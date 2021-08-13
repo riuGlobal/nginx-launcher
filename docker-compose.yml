@@ -54,4 +54,3 @@ services:
             - TYPEORM_DATABASE=${DB_DATABASE}
             - TYPEORM_SCHEMA=${TRAINING_SCHEMA}
             - TYPEORM_SYNCHRONIZE
-
