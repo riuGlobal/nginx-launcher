@@ -1,4 +1,7 @@
 services: 
+  # db
+  db-pg:
+    restart: unless-stopped
 
   # reverse proxy
   reverse:
