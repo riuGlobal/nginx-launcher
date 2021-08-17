@@ -42,3 +42,15 @@ services:
     build: https://github.com/riuGlobal/bank-client.git#${BANK_WEB_VERSION:-master}
     volumes:
       - ${PWD}/.env:/bank-web/.env
+
+  training:
+        build: https://riuGlobal:${REPO}@github.com/riuGlobal/training.git#${BRANCH}
+        environment:
+            - NODE_ENV_FILE=${TRAINING_ENV_FILE}
+            - TYPEORM_HOST=${DB_HOST}
+            - TYPEORM_PORT=${DB_PORT}
+            - TYPEORM_USERNAME=${DB_USER}
+            - TYPEORM_PASSWORD=${DB_PASSWORD}
+            - TYPEORM_DATABASE=${DB_DATABASE}
+            - TYPEORM_SCHEMA=${TRAINING_SCHEMA}
+            - TYPEORM_SYNCHRONIZE
